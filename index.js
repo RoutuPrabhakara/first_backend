@@ -1,6 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose')
-const cors = require('cors');
+const mycors = require('cors');
 const bodyParser = require('body-parser')
 
 const PORT = 3200;
@@ -24,7 +24,7 @@ database.once('open', ()=>{
 //middlewares
 app.use(bodyParser.json())
 app.use('/api', require('./routes/userRoute'))
-app.use(cors())
+app.use(mycors())
 
 
 app.listen(PORT, ()=>{
